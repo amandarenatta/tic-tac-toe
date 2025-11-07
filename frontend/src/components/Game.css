@@ -1,0 +1,220 @@
+/* /frontend/src/components/Game.css */
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.status.game-over {
+    font-weight: bold;
+    color: #4CAF50; /* Verde para jogo finalizado */
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* --- PLACAR --- */
+.scoreboard {
+    width: 300px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.scoreboard h3 {
+    text-align: center;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+.scoreboard .scores {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1em;
+}
+
+/* --- HISTÓRICO --- */
+.game-history {
+    margin-top: 40px;
+    width: 300px;
+    text-align: left;
+}
+
+.game-history h3 {
+    border-bottom: 2px solid #dadce0;
+    padding-bottom: 10px;
+}
+
+.game-history ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.game-history li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #555;
+}
+
+.game-history li span {
+    flex-grow: 1;
+}
+
+.edit-button {
+    background-color: #4060a0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.edit-button:hover {
+    background-color: #5070c0;
+}
+
+.delete-button {
+    background-color: #a04040;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: #c05050;
+}
+
+
+/* --- 🎨 ESTILOS DO NOVO MODAL 🎨 --- */
+
+/* O fundo escuro que cobre a tela */
+.modal-overlay {
+    position: fixed; /* Fica por cima de tudo */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* A caixa do modal em si */
+.modal-content {
+    background-color: #3C3C3C; /* Cor de fundo do seu jogo */
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #4CAF50; /* <--- COR DO JOGO (verde) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    color: #DADCE0; /* Cor do texto do seu jogo */
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* A barra de input estilizada */
+.modal-content input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #DADCE0;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #4CAF50; /* <--- COR DO JOGO (verde) */
+}
+
+/* Os botões dentro do modal */
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end; /* Joga os botões para a direita */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 10px 15px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-btn-cancel {
+    background-color: #777;
+    color: white;
+}
+
+.modal-btn-save {
+    background-color: #4CAF50; /* <--- COR DO JOGO (verde) */
+    color: white;
+}
