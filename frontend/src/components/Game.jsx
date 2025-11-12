@@ -113,7 +113,7 @@ function Game() {
         setXIsNext(true);
     }
     
-    // --- 🚀 NOVAS FUNÇÕES DO MODAL 🚀 ---
+   
 
     // Abre o Modal para CRIAR um novo jogo
     function openCreateModal(winnerName) {
@@ -181,7 +181,7 @@ function Game() {
         return acc;
     }, { X: 0, O: 0 });
 
-    // --- RENDERIZAÇÃO DO COMPONENTE ---
+  
     return (
         <div className="game">
             <h1 className="title">Jogo da Velha</h1>
@@ -206,7 +206,7 @@ function Game() {
                 Novo Jogo
             </button>}
 
-            {/* --- HISTÓRICO (MODIFICADO) --- */}
+           
             <div className="game-history">
                 <h3>Histórico de Partidas</h3>
                 <ul>
@@ -237,7 +237,7 @@ function Game() {
                 </ul>
             </div>
 
-            {/* --- 🚀 O NOSSO MODAL ESTILIZADO 🚀 --- */}
+    
             {isModalOpen && (
                 <div className="modal-overlay" onClick={closeModal}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -289,10 +289,11 @@ function Game() {
                     </div>
                 </div>
             )}
-            {/* --- FIM DO MODAL --- */}
+         
 
         </div>
     )
 }
+
 
 export default Game
