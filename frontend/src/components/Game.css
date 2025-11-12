@@ -132,9 +132,6 @@
 }
 
 
-/* --- 🎨 ESTILOS DO NOVO MODAL 🎨 --- */
-
-/* O fundo escuro que cobre a tela */
 .modal-overlay {
     position: fixed; /* Fica por cima de tudo */
     top: 0;
@@ -148,7 +145,7 @@
     z-index: 1000;
 }
 
-/* A caixa do modal em si */
+
 .modal-content {
     background-color: #3C3C3C; /* Cor de fundo do seu jogo */
     padding: 25px;
@@ -177,7 +174,7 @@
     font-weight: bold;
 }
 
-/* A barra de input estilizada */
+
 .modal-content input {
     padding: 10px;
     font-size: 1em;
@@ -192,7 +189,7 @@
     border-color: #4CAF50; /* <--- COR DO JOGO (verde) */
 }
 
-/* Os botões dentro do modal */
+
 .modal-buttons {
     display: flex;
     justify-content: flex-end; /* Joga os botões para a direita */
@@ -217,4 +214,5 @@
 .modal-btn-save {
     background-color: #4CAF50; /* <--- COR DO JOGO (verde) */
     color: white;
+
 }
