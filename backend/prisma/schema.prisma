@@ -1,4 +1,4 @@
-// /backend/prisma/schema.prisma
+
 
 generator client {
   provider = "prisma-client-js"
@@ -9,7 +9,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Este é o modelo da sua tabela de resultados
+
 model GameResult {
   id        Int      @id @default(autoincrement())
   winner    String   // "X", "O" ou "Draw" (Empate)
