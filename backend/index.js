@@ -1,7 +1,6 @@
-// /backend/index.js
 import express from 'express';
 import cors from 'cors';
-import { PrismaClient } from '@prisma/client'; // 1. Importe o Prisma
+import { PrismaClient } from '@prisma/client'; 
 
 // 2. Crie a instância do cliente
 const prisma = new PrismaClient();
@@ -9,19 +8,19 @@ const app = express();
 const PORT = 5000; // Porta do backend
 
 // Middlewares
-app.use(express.json()); // Permite ao servidor entender JSON
-app.use(cors()); // Permite que o frontend acesse o backend
+app.use(express.json()); 
+app.use(cors()); 
 
-// --- OPERAÇÕES CRUD (REQUISITO 3) ---
 
-// CREATE (Inclusão): Salvar um novo resultado de jogo
+
+// CREATE (Inclusão)
 app.post('/games', async (req, res) => {
   try {
-    const { winner, name } = req.body; // <-- ATUALIZADO
+    const { winner, name } = req.body; 
     const newGame = await prisma.gameResult.create({
       data: {
         winner: winner,
-        name: name, // <-- ATUALIZADO
+        name: name,
       },
     });
     // Retorna o novo jogo que foi criado no banco
@@ -32,12 +31,12 @@ app.post('/games', async (req, res) => {
   }
 });
 
-// READ (Acesso): Obter todos os resultados
+//   obtem resultados
 app.get('/games', async (req, res) => {
   try {
     const games = await prisma.gameResult.findMany({
       orderBy: {
-        createdAt: 'desc', // Mostra os mais recentes primeiro
+        createdAt: 'desc', 
       },
     });
     res.json(games);
@@ -47,7 +46,7 @@ app.get('/games', async (req, res) => {
   }
 });
 
-// UPDATE (Alteração): Atualizar um resultado de jogo
+// UPDATE: Atualiza um resultado de jogo
 app.put('/games/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -58,11 +57,11 @@ app.put('/games/:id', async (req, res) => {
         id: parseInt(id),
       },
       data: {
-        winner: winner, // <-- ATUALIZADO
-        name: name,     // <-- ATUALIZADO
+        winner: winner, 
+        name: name,    
       },
     });
-    res.json(updatedGame); // Retorna o jogo atualizado
+    res.json(updatedGame);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao atualizar o jogo' });
@@ -70,7 +69,7 @@ app.put('/games/:id', async (req, res) => {
 });
 
 
-// DELETE (Exclusão): Deletar um resultado
+// Deleta um resultado
 app.delete('/games/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -86,14 +85,13 @@ app.delete('/games/:id', async (req, res) => {
   }
 });
 
-// -------------------------------------
 
 // Rota de Teste
 app.get('/', (req, res) => {
   res.send('Servidor do Jogo da Velha está rodando e conectado ao Prisma!');
 });
 
-// Inicia o Servidor
 app.listen(PORT, () => {
   console.log(`Servidor backend rodando em http://localhost:${PORT}`);
+
 });
